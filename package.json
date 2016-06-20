@@ -1,0 +1,20 @@
+{
+  "name": "moniquebedo-images",
+  "dependencies": {
+    "babel-preset-es2015": "^6.9.0",
+    "babelify": "^7.3.0",
+    "browserify": "^13.0.1",
+    "html5-history-api": "^4.2.7",
+    "jade": "^1.11.0",
+    "jadeify": "^4.6.0",
+    "jquery": "^3.0.0",
+    "nib": "^1.1.0",
+    "page": "^1.7.1",
+    "watchify": "^3.7.0"
+  },
+  "scripts": {
+    "styl": "stylus -u nib --watch --compress assets/app/style.styl --out css/style.css",
+    "build": "NODE_PATH=. browserify -t jadeify -t [ babelify --presets [ es2015 ] ] assets/app/index.js > js/app.js",
+    "buildw": "NODE_PATH=. watchify -t jadeify -t [ babelify --presets [ es2015 ] ] assets/app/index.js -o js/app.js"
+  }
+}
